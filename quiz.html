@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Quiz</title>
+</head>
+<body>
+    <h1>Your Generated Quiz</h1>
+    {% for q in quiz %}
+        <div>
+            <p><strong>{{ loop.index }}. {{ q.question }}</strong></p>
+            <ul>
+                {% for option in q.options %}
+                    <li>{{ option }}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Correct Answer:</strong> {{ q.answer }}</p>
+        </div>
+    {% endfor %}
+    <a href="/">Generate Another Quiz</a>
+</body>
+</html>
